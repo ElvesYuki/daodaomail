@@ -97,6 +97,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.xmo.ddmail.pojo.TbSpecification">
+    <selectKey resultType="long" keyProperty="id" order="AFTER">
+      select  LAST_INSERT_ID()
+    </selectKey>
     insert into tb_specification (id, spec_name)
     values (#{id,jdbcType=BIGINT}, #{specName,jdbcType=VARCHAR})
   </insert>

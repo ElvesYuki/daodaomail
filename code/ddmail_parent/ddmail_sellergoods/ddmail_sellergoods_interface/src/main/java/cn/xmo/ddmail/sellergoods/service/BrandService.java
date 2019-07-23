@@ -1,6 +1,7 @@
 package cn.xmo.ddmail.sellergoods.service;
 
 import cn.xmo.ddmail.pojo.TbBrand;
+import entity.PageResult;
 
 import java.util.List;
 
@@ -12,5 +13,13 @@ import java.util.List;
  */
 public interface BrandService {
 
-    public List<TbBrand> findAll();
+     List<TbBrand> findAll();
+
+     PageResult<TbBrand> findPage(int page, int size);
+
+    void save(TbBrand brand);
+
+    TbBrand findOne(Long id);
+
+    void delete(String ids);
 }

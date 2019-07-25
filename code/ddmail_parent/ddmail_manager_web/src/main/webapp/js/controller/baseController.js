@@ -28,5 +28,13 @@ app.controller('baseController',function($scope,$http){
             $scope.selectIds.splice(index, 1)
         }
     };
-
+    //将json字符串转换为json数组、遍历取值拼接
+    $scope.jsonToString = function (jsonStr,key) {
+       var jsonArr =  JSON.parse(jsonStr);
+       var tempArr = new Array();
+       for(var i = 0; i < jsonArr.length; i++){
+           tempArr.push(jsonArr[i][key]);
+       }
+       return tempArr.join(",");
+    }
 });

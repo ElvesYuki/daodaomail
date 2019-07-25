@@ -1,7 +1,7 @@
 app.controller('brandController',function($scope,$http,brandService,$controller){
     $controller('baseController',{$scope:$scope});
     $scope.findAll = function(){
-        brandService.findAll.success(function (res) {
+        brandService.findAll().success(function (res) {
             $scope.brandList = res;
         })
     };
